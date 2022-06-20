@@ -9,6 +9,7 @@ public class Hello {
         System.out.printf("Enter your name : ");
         name = scanner.nextLine();
         System.out.printf("Hello "+name);
+        System.out.printf("");
     }
 
 }
