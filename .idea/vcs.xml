@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ss08_cleancode_refactoring/BaiTap/apj-tennis-game" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ss08_cleancode_refactoring/ThucHanh/DoiTenBien_TachHang/apj-calculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ss08_cleancode_refactoring/ThucHanh/TachBien/apj-fizzbuzz" vcs="Git" />
   </component>
 </project>

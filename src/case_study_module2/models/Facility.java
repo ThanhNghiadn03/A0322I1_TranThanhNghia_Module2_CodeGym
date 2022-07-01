@@ -5,12 +5,19 @@ public abstract class Facility {
     private double areaUsed;
     private double rentalCost;
     private int maxNumOfCustomer;
-    private String typeRent;
+    private  Last typeRent;
+
+    enum Last {
+        year,
+        month,
+        day,
+        hour
+    }
 
     public Facility() {
     }
 
-    public Facility(String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer, String typeRent) {
+    public Facility(String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer, Last typeRent) {
         this.nameOfService = nameOfService;
         this.areaUsed = areaUsed;
         this.rentalCost = rentalCost;
@@ -50,11 +57,11 @@ public abstract class Facility {
         this.maxNumOfCustomer = maxNumOfCustomer;
     }
 
-    public String getTypeRent() {
+    public Last getTypeRent() {
         return typeRent;
     }
 
-    public void setTypeRent(String typeRent) {
+    public void setTypeRent(Last typeRent) {
         this.typeRent = typeRent;
     }
 }
