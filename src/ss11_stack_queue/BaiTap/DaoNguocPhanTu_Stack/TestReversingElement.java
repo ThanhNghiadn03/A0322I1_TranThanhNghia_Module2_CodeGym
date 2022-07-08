@@ -7,28 +7,21 @@ public class TestReversingElement {
         int n;
         Scanner scanner = new Scanner(System.in);
         System.out.printf("Nhập vào số lượng phần tử trong mảng : ");
-        n = scanner.nextInt();
+        n = Integer.parseInt(scanner.nextLine());
         int[] arrInteger = new int[n];
         for (int i=0 ; i<n ; i++) {
-            arrInteger[i] = scanner.nextInt();
+            arrInteger[i] = Integer.parseInt(scanner.nextLine());
         }
-        System.out.println("Trước khi đảo ngược : ");
+        System.out.println("Mảng số trước khi đảo ngược : ");
         for (int i : arrInteger) {
             System.out.println(i);
         }
-        arrInteger = ReversingElement.reverseInteger(arrInteger,n);
-        for (int i : arrInteger) {
-            System.out.println(i);
-        }
+        System.out.println("Mảng số sau khi đảo ngược");
+        ReversingElement.reverseInteger(arrInteger,n);
+        String wordUse;
+        System.out.print("Nhập vào 1 từ để đảo ngược từ đó : ");
+        wordUse = scanner.nextLine();
         System.out.println("Sau khi đảo ngược : ");
-        for (int i:arrInteger) {
-            System.out.println(i);
-        }
-        String word;
-        System.out.printf("Nhập vào 1 từ để đảo ngược từ đó : ");
-        word = scanner.next();
-        System.out.println("Sau khi đảo ngược : ");
-        word = ReversingElement.reverseWord(word);
-        System.out.println(word);
+        ReversingElement.reverseWord(wordUse);
     }
 }
