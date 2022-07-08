@@ -1,9 +1,9 @@
 package case_study_module2.models;
 
 public class Employee extends Person{
-    private String empID;
-    private level academicLevel;
-    private pos position;
+    private java.lang.String empID;
+    private java.lang.String academicLevel;
+    private String position;
     private long salary;
 
     enum pos {
@@ -25,14 +25,15 @@ public class Employee extends Person{
     public Employee() {
     }
 
-    public Employee(String empID, level academicLevel, pos position, long salary) {
+    public Employee(java.lang.String empID, java.lang.String academicLevel, String position, long salary) {
         this.empID = empID;
         this.academicLevel = academicLevel;
         this.position = position;
         this.salary = salary;
     }
 
-    public Employee(String fullName, String dateOfBirth, boolean gender, long identityCardNum, long phoneNumber, String mail, String empID, level academicLevel, pos position, long salary) {
+    public Employee(java.lang.String fullName, java.lang.String dateOfBirth, boolean gender, long identityCardNum,
+                    long phoneNumber, java.lang.String mail, java.lang.String empID, java.lang.String academicLevel, String position, long salary) {
         super(fullName, dateOfBirth, gender, identityCardNum, phoneNumber, mail);
         this.empID = empID;
         this.academicLevel = academicLevel;
@@ -40,27 +41,27 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    public String getEmpID() {
+    public java.lang.String getEmpID() {
         return empID;
     }
 
-    public void setEmpID(String empID) {
+    public void setEmpID(java.lang.String empID) {
         this.empID = empID;
     }
 
-    public level getAcademicLevel() {
+    public java.lang.String getAcademicLevel() {
         return academicLevel;
     }
 
-    public void setAcademicLevel(level academicLevel) {
+    public void setAcademicLevel(java.lang.String academicLevel) {
         this.academicLevel = academicLevel;
     }
 
-    public pos getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(pos position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
@@ -73,7 +74,7 @@ public class Employee extends Person{
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "Employee{"+ "Name : "+super.getFullName()+" , identity card number : "+super.getIdentityCardNum()+" , " +
                 "empID='" + empID + '\'' +
                 ", academicLevel=" + academicLevel +
