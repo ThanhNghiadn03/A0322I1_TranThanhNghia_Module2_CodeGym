@@ -75,8 +75,10 @@ public class Employee extends Person{
 
     @Override
     public java.lang.String toString() {
-        return "Employee{"+ "Name : "+super.getFullName()+" , identity card number : "+super.getIdentityCardNum()+" , " +
-                "empID='" + empID + '\'' +
+        return "Employee{"+ "Name : "+super.getFullName()+" , identity card number : "+super.getIdentityCardNum()+
+                " , " +"gender : "+(super.isGender()==true ? "Nam" : "Nữ")+" , mail : "+super.getMail()+
+                " , phone number : "+super.getPhoneNumber()+
+                " , empID='" + empID + '\'' +
                 ", academicLevel=" + academicLevel +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
