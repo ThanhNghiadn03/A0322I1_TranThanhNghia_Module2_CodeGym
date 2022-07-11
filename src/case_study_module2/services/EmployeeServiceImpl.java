@@ -19,6 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void addNewEmployee() {
+        System.out.println("\nThêm mới nhân viên :");
         Scanner scanner = new Scanner(System.in);
         String fullName,dateOfBirth,mail,empID,acdemicLevel,position;
         boolean gender;

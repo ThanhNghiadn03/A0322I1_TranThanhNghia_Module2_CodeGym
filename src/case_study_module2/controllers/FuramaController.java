@@ -1,5 +1,6 @@
 package case_study_module2.controllers;
 
+import case_study_module2.services.CustomerServiceImpl;
 import case_study_module2.services.EmployeeServiceImpl;
 
 import java.util.Scanner;
@@ -19,18 +20,58 @@ public class FuramaController {
         switch (choose) {
             case 1 :
                 employeeManagement.showEmployees();
+                FuramaController.employeeManagement();
                 break;
             case 2 :
                 employeeManagement.addNewEmployee();
+                FuramaController.employeeManagement();
                 break;
             case 3 :
                 employeeManagement.editEmployeeByID();
+                FuramaController.employeeManagement();
                 break;
             case 4 :
                 displayMainMenu();
                 break;
+            default:
+                System.out.println("Invalid choice !!!");
+                break;
         }
     }
+
+    public static void customerManagement() {
+        System.out.println("\nCUSTOMER MANAGEMENT :\n");
+        System.out.println("1. Display list customers.");
+        System.out.println("2. Add new customer.");
+        System.out.println("3. Edit customer.");
+        System.out.println("4. Return main menu.");
+        System.out.print("\nChoose 1 of functions : ");
+        byte choose = 1;
+        Scanner scanner = new Scanner(System.in);
+        choose = scanner.nextByte();
+        CustomerServiceImpl customerManagement = new CustomerServiceImpl();
+        switch (choose) {
+            case 1 :
+                customerManagement.showCustomers();
+                FuramaController.customerManagement();
+                break;
+            case 2 :
+                customerManagement.addNewCustomers();
+                FuramaController.customerManagement();
+                break;
+            case 3 :
+                customerManagement.editCustomers();
+                FuramaController.customerManagement();
+                break;
+            case 4 :
+                FuramaController.displayMainMenu();
+                break;
+            default:
+                System.out.println("Invalid choice !!!");
+                break;
+        }
+    }
+
     public static void displayMainMenu() {
         System.out.println("\nMAIN MENU\n");
         System.out.println("1. Employee Management.");
@@ -48,10 +89,6 @@ public class FuramaController {
                 employeeManagement();
                 break;
             case 2 :
-                System.out.println("1. Display list customers.");
-                System.out.println("2. Add new customer.");
-                System.out.println("3. Edit customer.");
-                System.out.println("4. Return main menu.");
                 break;
             case 3 :
                 System.out.println("1. Display list facility.");
