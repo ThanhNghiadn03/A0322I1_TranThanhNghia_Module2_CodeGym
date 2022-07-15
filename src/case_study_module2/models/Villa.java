@@ -3,18 +3,19 @@ package case_study_module2.models;
 public class Villa extends Facility {
     private String roomStandard;
     private double areaPool;
-    private byte numOfFloors;
+    private int numOfFloors;
 
     public Villa() {
     }
 
-    public Villa(String roomStandard, double areaPool, byte numOfFloors) {
+    public Villa(String roomStandard, double areaPool, int numOfFloors) {
         this.roomStandard = roomStandard;
         this.areaPool = areaPool;
         this.numOfFloors = numOfFloors;
     }
 
-    public Villa(String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer, Last typeRent, String roomStandard, double areaPool, byte numOfFloors) {
+    public Villa(String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer, String typeRent,
+                 String roomStandard, double areaPool, int numOfFloors) {
         super(nameOfService, areaUsed, rentalCost, maxNumOfCustomer, typeRent);
         this.roomStandard = roomStandard;
         this.areaPool = areaPool;
@@ -37,7 +38,7 @@ public class Villa extends Facility {
         this.areaPool = areaPool;
     }
 
-    public byte getNumOfFloors() {
+    public int getNumOfFloors() {
         return numOfFloors;
     }
 

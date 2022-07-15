@@ -8,7 +8,8 @@ public class Booking {
     private String nameOfService;
     private String typeOfService;
 
-    public Booking(String bookingID, String startDay, String endDay, String customID, String nameOfService, String typeOfService) {
+    public Booking(String bookingID, String startDay, String endDay, String customID, String nameOfService,
+                   String typeOfService) {
         this.bookingID = bookingID;
         this.startDay = startDay;
         this.endDay = endDay;

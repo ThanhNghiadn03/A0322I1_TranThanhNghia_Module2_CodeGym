@@ -1,7 +1,6 @@
 package case_study_module2.controllers;
 
-import case_study_module2.services.CustomerServiceImpl;
-import case_study_module2.services.EmployeeServiceImpl;
+import case_study_module2.services.*;
 
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class FuramaController {
         byte choose = 1;
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextByte();
-        EmployeeServiceImpl employeeManagement = new EmployeeServiceImpl();
+        EmployeeService employeeManagement = new EmployeeServiceImpl();
         switch (choose) {
             case 1 :
                 employeeManagement.showEmployees();
@@ -49,7 +48,7 @@ public class FuramaController {
         byte choose = 1;
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextByte();
-        CustomerServiceImpl customerManagement = new CustomerServiceImpl();
+        CustomerService customerManagement = new CustomerServiceImpl();
         switch (choose) {
             case 1 :
                 customerManagement.showCustomers();
@@ -71,6 +70,22 @@ public class FuramaController {
                 break;
         }
     }
+    public static void facilityManagement() {
+        System.out.println("\nFACILITY MANAGEMENT : ");
+        System.out.println("1. Display list facility.");
+        System.out.println("2. Add new facility.");
+        System.out.println("3. Display list facility maintenance.");
+        System.out.println("4. Return main menu.");
+        byte choose = 1;
+        Scanner scanner = new Scanner(System.in);
+        choose = scanner.nextByte();
+        FacilityService facilityService = new FacilityServiceImpl();
+        switch (choose) {
+            case 1 :
+                facilityService.displayFacility();
+                break;
+        }
+    }
 
     public static void displayMainMenu() {
         System.out.println("\nMAIN MENU\n");
@@ -89,12 +104,10 @@ public class FuramaController {
                 employeeManagement();
                 break;
             case 2 :
+                customerManagement();
                 break;
             case 3 :
-                System.out.println("1. Display list facility.");
-                System.out.println("2. Add new facility.");
-                System.out.println("3. Display list facility maintenance.");
-                System.out.println("4. Return main menu.");
+                facilityManagement();
                 break;
             case 4 :
                 System.out.println("1. Add new booking.");
