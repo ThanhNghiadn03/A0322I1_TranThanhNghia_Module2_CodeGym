@@ -1,5 +1,7 @@
 package case_study_module2.models;
 
+import java.util.Date;
+
 public class Customer extends Person{
     private String customID;
     private String customType;

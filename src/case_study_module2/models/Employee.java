@@ -1,5 +1,7 @@
 package case_study_module2.models;
 
+import java.util.Date;
+
 public class Employee extends Person{
     private java.lang.String empID;
     private java.lang.String academicLevel;
@@ -32,8 +34,9 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    public Employee(java.lang.String fullName, java.lang.String dateOfBirth, boolean gender, long identityCardNum,
-                    long phoneNumber, java.lang.String mail, java.lang.String empID, java.lang.String academicLevel, String position, long salary) {
+    public Employee(java.lang.String fullName, String dateOfBirth, boolean gender, long identityCardNum,
+                    long phoneNumber, java.lang.String mail, java.lang.String empID, java.lang.String academicLevel,
+                    String position, long salary) {
         super(fullName, dateOfBirth, gender, identityCardNum, phoneNumber, mail);
         this.empID = empID;
         this.academicLevel = academicLevel;

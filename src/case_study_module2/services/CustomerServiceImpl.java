@@ -2,15 +2,20 @@ package case_study_module2.services;
 
 import case_study_module2.models.Customer;
 import case_study_module2.models.Employee;
+import case_study_module2.models.Person;
+import javafx.scene.input.DataFormat;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService{
     public static List<Customer> customerList = new ArrayList<>();
     static {
-        customerList.add(new Customer("Lê Trúc Nhân","14/05/1987",true,333333,
+        customerList.add(new Customer("Lê Trúc Nhân", "1985-12-16",true,333333,
                 8425983,"trucnhan@gmail.com","custom01"
         ,"Gold","61 Đống Đa , Hà Nội"));
         customerList.add(new Customer("Trần Đắc Văn","04/08/1975",
@@ -37,6 +42,11 @@ public class CustomerServiceImpl implements CustomerService{
         fullName = scanner.nextLine();
         System.out.print("Nhập vào ngày tháng năm sinh : ");
         dateOfBirth = scanner.nextLine();
+        try {
+            LocalDate birthday = LocalDate.parse(dateOfBirth, Person.dateTimeFormatter);
+        }catch (DateTimeParseException dt) {
+
+        }
         System.out.print("Nhập vào e-mail : ");
         mail = scanner.nextLine();
         System.out.print("Nhập vào giới tính : ");

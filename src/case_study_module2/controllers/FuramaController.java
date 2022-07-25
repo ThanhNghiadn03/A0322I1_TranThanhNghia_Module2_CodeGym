@@ -76,6 +76,7 @@ public class FuramaController {
         System.out.println("2. Add new facility.");
         System.out.println("3. Display list facility maintenance.");
         System.out.println("4. Return main menu.");
+        System.out.print("\nChoose 1 of functions : ");
         byte choose = 1;
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextByte();
@@ -83,6 +84,11 @@ public class FuramaController {
         switch (choose) {
             case 1 :
                 facilityService.displayFacility();
+                FuramaController.facilityManagement();
+                break;
+            case 2 :
+                facilityService.addNewFacility();
+                FuramaController.facilityManagement();
                 break;
         }
     }

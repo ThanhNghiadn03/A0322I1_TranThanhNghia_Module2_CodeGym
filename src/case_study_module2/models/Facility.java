@@ -1,6 +1,7 @@
 package case_study_module2.models;
 
 public abstract class Facility {
+    private String serviceID;
     private String nameOfService;
     private double areaUsed;
     private double rentalCost;
@@ -17,12 +18,22 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer, String typeRent) {
+    public Facility(String serviceID,String nameOfService, double areaUsed, double rentalCost, int maxNumOfCustomer,
+                    String typeRent) {
+        this.serviceID = serviceID;
         this.nameOfService = nameOfService;
         this.areaUsed = areaUsed;
         this.rentalCost = rentalCost;
         this.maxNumOfCustomer = maxNumOfCustomer;
         this.typeRent = typeRent;
+    }
+
+    public String getServiceID() {
+        return serviceID;
+    }
+
+    public void setServiceID(String serviceID) {
+        this.serviceID = serviceID;
     }
 
     public String getNameOfService() {

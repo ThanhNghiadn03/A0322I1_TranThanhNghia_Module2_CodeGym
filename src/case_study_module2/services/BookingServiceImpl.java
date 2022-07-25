@@ -11,11 +11,11 @@ public class BookingServiceImpl implements BookingService{
 //            FacilityServiceImpl.updateStatusVilla();
 //        }
 //    }
-    public static Booking booking1 = new Booking("bk000","15/07/2022","30/08/2022","custom01",
-        "Rent villa","normal");
-    public static void update() {
-        if (booking1.getNameOfService().equals("Rent villa")) {
-            FacilityServiceImpl.updateStatusVilla();
-        }
-    }
+//    public static Booking booking1 = new Booking("bk000","15/07/2022","30/08/2022","custom01",
+//        "Rent villa","normal");
+//    public static void update() {
+//        if (booking1.getNameOfService().equals("Rent villa")) {
+//            FacilityServiceImpl.updateStatusVilla();
+//        }
+//    }
 }

@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class EmployeeServiceImpl implements EmployeeService{
     public static List<Employee> employeeList = new ArrayList<>();
     static {
-        employeeList.add(new Employee("Tran Thanh Nghia","21/06/2003",true,
+        employeeList.add(new Employee("Tran Thanh Nghia","1986-06-21",true,
                 111111,847936,"Nghia@gmail.com","emp00",
                 "university", "manager",12000));
-        employeeList.add(new Employee("Ha Nhu Y","13/09/2007",false,
+        employeeList.add(new Employee("Ha Nhu Y","1995-12-01",false,
                 222222,845678,"Y@gmail.com",
                 "emp01","University","receptionist", 6000));
     }
