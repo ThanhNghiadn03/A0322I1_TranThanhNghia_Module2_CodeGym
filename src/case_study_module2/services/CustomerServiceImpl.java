@@ -18,7 +18,7 @@ public class CustomerServiceImpl implements CustomerService{
         customerList.add(new Customer("Lê Trúc Nhân", "1985-12-16",true,333333,
                 8425983,"trucnhan@gmail.com","custom01"
         ,"Gold","61 Đống Đa , Hà Nội"));
-        customerList.add(new Customer("Trần Đắc Văn","04/08/1975",
+        customerList.add(new Customer("Trần Đắc Văn","1975-08-09",
                 true,444444,8466678,"van@gmail.com","custom02",
                 "Silver","84 Liên Chiểu , Đà Nẵng"));
     }
