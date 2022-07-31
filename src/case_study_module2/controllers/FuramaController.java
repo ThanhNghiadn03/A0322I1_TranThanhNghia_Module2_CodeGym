@@ -2,10 +2,12 @@ package case_study_module2.controllers;
 
 import case_study_module2.services.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FuramaController {
-    public static void employeeManagement() {
+    public static void employeeManagement() throws IOException {
         System.out.println("\n EMPLOYEE MANAGEMENT :\n");
         System.out.println("1. Display list employees.");
         System.out.println("2. Add new employee.");
@@ -38,7 +40,7 @@ public class FuramaController {
         }
     }
 
-    public static void customerManagement() {
+    public static void customerManagement() throws IOException {
         System.out.println("\nCUSTOMER MANAGEMENT :\n");
         System.out.println("1. Display list customers.");
         System.out.println("2. Add new customer.");
@@ -70,7 +72,7 @@ public class FuramaController {
                 break;
         }
     }
-    public static void facilityManagement() {
+    public static void facilityManagement() throws IOException {
         System.out.println("\nFACILITY MANAGEMENT : ");
         System.out.println("1. Display list facility.");
         System.out.println("2. Add new facility.");
@@ -90,10 +92,41 @@ public class FuramaController {
                 facilityService.addNewFacility();
                 FuramaController.facilityManagement();
                 break;
+            case 4 :
+                FuramaController.displayMainMenu();
+                break;
         }
     }
 
-    public static void displayMainMenu() {
+    public static void bookingManagement() throws IOException {
+        System.out.println("\nBOOKING MANAGEMENT : ");
+        System.out.println("1. Add new booking.");
+        System.out.println("2. Display list booking.");
+        System.out.println("3. Create new contracts.");
+        System.out.println("4. Display list contracts.");
+        System.out.println("5. Edit contracts.");
+        System.out.println("6. Return main menu.");
+        System.out.print("\nChoose 1 of functions : ");
+        byte choose = 1;
+        Scanner scanner = new Scanner(System.in);
+        choose = scanner.nextByte();
+        BookingServiceImpl bookingService = new BookingServiceImpl();
+        switch (choose) {
+            case 1 :
+                bookingService.addNewBooking();
+                FuramaController.bookingManagement();
+                break;
+            case 2 :
+                bookingService.displayListBooking();
+                FuramaController.bookingManagement();
+                break;
+            case 6 :
+                displayMainMenu();
+                break;
+        }
+    }
+
+    public static void displayMainMenu() throws IOException {
         System.out.println("\nMAIN MENU\n");
         System.out.println("1. Employee Management.");
         System.out.println("2. Customer Management.");
@@ -116,12 +149,7 @@ public class FuramaController {
                 facilityManagement();
                 break;
             case 4 :
-                System.out.println("1. Add new booking.");
-                System.out.println("2. Display list booking.");
-                System.out.println("3. Create new contracts.");
-                System.out.println("4. Display list contracts.");
-                System.out.println("5. Edit contracts.");
-                System.out.println("6. Return main menu.");
+                bookingManagement();
                 break;
             case 5 :
                 System.out.println("1. Display list customers use service.");
@@ -136,7 +164,7 @@ public class FuramaController {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         FuramaController.displayMainMenu();
     }
 }

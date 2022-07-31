@@ -37,7 +37,7 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{"  + " Name of service : "+ super.getNameOfService()+
+        return "House{"+" Service ID : "+super.getServiceID() + " , name of service : "+ super.getNameOfService()+
                 " , area : "+super.getAreaUsed()+" , rental cost : "+super.getRentalCost()+
                 " , number of customer : "+super.getMaxNumOfCustomer()+" , type rent : "+super.getTypeRent()+
                 " , roomStandard='" + roomStandard + '\'' +

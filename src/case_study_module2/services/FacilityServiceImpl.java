@@ -11,13 +11,13 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService{
-    public static House house = new House("HO00","House 1",180,130,
+    public static House house = new House("HO01","House 1",180,130,
             3,
             "months","normal",5);
-    public static Villa villa = new Villa("VL00","Villa 1", 300 , 10000,
+    public static Villa villa = new Villa("VL01","Villa 1", 300 , 10000,
             13,
             "weeks","Big",13.6,3);
-    public static Room room = new Room("RO00","Room 1",15,500,3,
+    public static Room room = new Room("RO01","Room 1",15,500,3,
             "days","free wifi");
     public static LinkedHashMap<Object, Integer> facilityList = new LinkedHashMap<Object,Integer>();
 

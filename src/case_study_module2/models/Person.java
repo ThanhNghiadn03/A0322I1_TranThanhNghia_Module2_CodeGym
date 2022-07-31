@@ -1,8 +1,9 @@
 package case_study_module2.models;
 
+import case_study_module2.utils.AgeException;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 
 public abstract class Person {
@@ -15,11 +16,6 @@ public abstract class Person {
     public static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Person() {
-    }
-
-    public static void checkAge(Date date) {
-        Date nowDate = new Date();
-
     }
     public Person(String fullName,String birthday, boolean gender, long identityCardNum, long phoneNumber,
                   String mail) {

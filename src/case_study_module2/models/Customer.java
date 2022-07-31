@@ -1,5 +1,7 @@
 package case_study_module2.models;
 
+import case_study_module2.services.CustomerServiceImpl;
+
 import java.util.Date;
 
 public class Customer extends Person{
@@ -58,12 +60,12 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" + " name = "+super.getFullName()+" , date of birth : "+super.getDateOfBirth()+
+        return "{" + " customID= " + customID+" , date of birth : "+super.getDateOfBirth()+
                 " , gender : "+(super.isGender()==true ? "Nam":"Nữ")+" , CMND : "+super.getIdentityCardNum()+
                 " , phone number : "+super.getPhoneNumber()+" , mail : "+super.getMail()+
-                " , customID= " + customID+
+                " , name = "+super.getFullName()+
                 ", customType= " + customType +
                 ", address= " + address +
-                '}';
+                "}\n";
     }
 }
