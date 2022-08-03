@@ -3,6 +3,7 @@ package case_study_module2.services;
 import case_study_module2.models.*;
 import case_study_module2.utils.CheckingPatternChoice;
 import case_study_module2.utils.CheckingPatternDate;
+import case_study_module2.utils.CheckingTimesUseFacility;
 
 import java.io.*;
 import java.util.*;
@@ -10,6 +11,13 @@ import java.util.*;
 public class BookingServiceImpl implements BookingService{
     public static Map<Booking,String> bookingTreeMap = new TreeMap<>();
     public static final String fileBooking = "E:\\A0322I1_TranThanhNghia_Module2\\src\\case_study_module2\\data\\Booking.CSV";
+    static {
+        try {
+            BookingServiceImpl.readFile();
+        } catch (IOException e) {
+            System.out.println("Lỗi nhập xuất.");
+        }
+    }
     public static void readFile() throws IOException {
         FileReader fileReader = new FileReader(fileBooking);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -86,6 +94,7 @@ public class BookingServiceImpl implements BookingService{
         Booking booking = new Booking(bookingID,startDay,endDay,customID,nameOfService,serviceID);
         bookingTreeMap.put(booking,serviceID);
         BookingServiceImpl.writeFile();
+        CheckingTimesUseFacility.Times();
         System.out.println("Đã lưu lại booking , bạn có muốn tiếp tục booking không (Y/N) ? ");
         String choose;
         choose = CheckingPatternChoice.checkChoice(choose =scanner.nextLine());

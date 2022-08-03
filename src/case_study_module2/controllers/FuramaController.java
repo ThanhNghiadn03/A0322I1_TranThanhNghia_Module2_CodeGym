@@ -2,13 +2,12 @@ package case_study_module2.controllers;
 
 import case_study_module2.services.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class FuramaController {
     public static void employeeManagement() throws IOException {
-        System.out.println("\n EMPLOYEE MANAGEMENT :\n");
+        System.out.println("\n EMPLOYEE :\n");
         System.out.println("1. Display list employees.");
         System.out.println("2. Add new employee.");
         System.out.println("3. Edit employee.");
@@ -41,7 +40,7 @@ public class FuramaController {
     }
 
     public static void customerManagement() throws IOException {
-        System.out.println("\nCUSTOMER MANAGEMENT :\n");
+        System.out.println("\nCUSTOMER :\n");
         System.out.println("1. Display list customers.");
         System.out.println("2. Add new customer.");
         System.out.println("3. Edit customer.");
@@ -73,7 +72,7 @@ public class FuramaController {
         }
     }
     public static void facilityManagement() throws IOException {
-        System.out.println("\nFACILITY MANAGEMENT : ");
+        System.out.println("\nFACILITY : ");
         System.out.println("1. Display list facility.");
         System.out.println("2. Add new facility.");
         System.out.println("3. Display list facility maintenance.");
@@ -99,7 +98,7 @@ public class FuramaController {
     }
 
     public static void bookingManagement() throws IOException {
-        System.out.println("\nBOOKING MANAGEMENT : ");
+        System.out.println("\nBOOKING : ");
         System.out.println("1. Add new booking.");
         System.out.println("2. Display list booking.");
         System.out.println("3. Create new contracts.");
@@ -111,6 +110,7 @@ public class FuramaController {
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextByte();
         BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContractServiceImpl contractService = new ContractServiceImpl();
         switch (choose) {
             case 1 :
                 bookingService.addNewBooking();
@@ -120,8 +120,45 @@ public class FuramaController {
                 bookingService.displayListBooking();
                 FuramaController.bookingManagement();
                 break;
+            case 3 :
+                contractService.addNewContract();
+                FuramaController.bookingManagement();
+                break;
+            case 4 :
+                contractService.displayContract();
+                FuramaController.bookingManagement();
+                break;
+            case 5 :
+                contractService.editContract();
+                FuramaController.bookingManagement();
+                break;
             case 6 :
                 displayMainMenu();
+                break;
+        }
+    }
+
+    public static void promotionManagement() throws IOException {
+        System.out.println("\nPROMOTION : ");
+        System.out.println("1. Display list customers use service.");
+        System.out.println("2. Display list customers get voucher.");
+        System.out.println("3. Return main menu.");
+        System.out.print("\nChoose 1 of functions : ");
+        byte choose = 1;
+        Scanner scanner = new Scanner(System.in);
+        choose = scanner.nextByte();
+        PromotionServiceImpl promotionService = new PromotionServiceImpl();
+        switch (choose) {
+            case 1 :
+                promotionService.displayCustomerFollowYear();
+                promotionManagement();
+                break;
+            case 2 :
+                promotionService.displayCustomerGetVoucher();
+                promotionManagement();
+                break;
+            case 3 :
+                FuramaController.displayMainMenu();
                 break;
         }
     }
@@ -152,9 +189,7 @@ public class FuramaController {
                 bookingManagement();
                 break;
             case 5 :
-                System.out.println("1. Display list customers use service.");
-                System.out.println("2. Display list customers get voucher.");
-                System.out.println("3. Return main menu.");
+                promotionManagement();
                 break;
             case 6 :
                 break;

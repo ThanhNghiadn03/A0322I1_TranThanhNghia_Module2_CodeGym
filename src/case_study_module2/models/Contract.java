@@ -57,4 +57,13 @@ public class Contract {
     public void setCustomID(String customID) {
         this.customID = customID;
     }
+
+    @Override
+    public String toString() {
+        return "Contract number : " + contractNumber +
+                " , booking ID : " + bookingID +
+                " , deposit money : " + depositAmount +
+                " , total amount need pay : " + amountNeedPay +
+                " , customer ID : " + customID + "\n";
+    }
 }
